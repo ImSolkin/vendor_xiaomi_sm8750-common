@@ -15,6 +15,31 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+    name: "android.hardware.vibrator-V1-ndk_platform",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "btaudio_offload_if",
     owner: "xiaomi",
     strip: {
@@ -1381,6 +1406,32 @@ cc_prebuilt_library_shared {
                 "libQSEEComAPI",
                 "vendor.qti.hardware.soter-V1-ndk",
                 "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vibrator.default",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/vibrator.default.so",
+            ],
+            shared_libs: [
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -3112,6 +3163,7 @@ cc_prebuilt_library_shared {
                 "libar-acdb",
                 "liblx-ar_util",
                 "libar-gpr",
+                "libmisight",
                 "libcutils",
                 "libc++",
                 "libc",
@@ -5443,6 +5495,7 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libexpat",
                 "libar-pal",
+                "libmisight",
                 "libc++",
                 "libc",
                 "libm",
@@ -6795,6 +6848,7 @@ cc_prebuilt_library_shared {
                 "libexpat",
                 "liblog",
                 "libar-pal",
+                "libmisight",
                 "libc++",
                 "libc",
                 "libm",
@@ -13646,6 +13700,9 @@ cc_prebuilt_library_shared {
                 "libqmi_common_so",
                 "libdisplayconfig.qti",
                 "libqcrilNrLogger",
+                "libqmi_client_helper",
+                "libqmi_client_qmux",
+                "libdsutils",
                 "libxml2",
                 "libc++",
                 "libc",
@@ -13679,6 +13736,10 @@ cc_prebuilt_library_shared {
                 "libqcrilNrQtiMutex",
                 "libqmi_cci",
                 "qtiril-utils",
+                "libqmi_client_helper",
+                "libqmiservices",
+                "libqmi_client_qmux",
+                "libdsutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -15312,6 +15373,31 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
                 "libc++",
                 "libc",
                 "libm",
@@ -19561,7 +19647,6 @@ cc_prebuilt_library_shared {
                 "lib-imsvideocodec",
                 "libmediandk",
                 "libnativewindow",
-                "libion",
                 "libdmabufheap",
                 "lib-imsvtutils",
                 "libandroid",
@@ -19670,34 +19755,6 @@ cc_prebuilt_library_shared {
                 "libbinder_ndk",
                 "vendor.qti.diaghal-V1-ndk",
                 "libc++",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libimscamera_jni",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/system_ext/lib64/libimscamera_jni.so",
-            ],
-            shared_libs: [
-                "libnativehelper",
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
                 "libm",
                 "libdl",
             ],
@@ -19894,6 +19951,7 @@ cc_prebuilt_library_shared {
                 "libhistprocess",
                 "libdisplaylog",
                 "libadaptivehdr",
+                "libdynamicelvss",
                 "android.frameworks.sensorservice-V1-ndk",
                 "android.hardware.sensors-V3-ndk",
                 "vendor.xiaomi.hardware.framecapturemanager-V1-ndk",
@@ -20384,6 +20442,36 @@ cc_prebuilt_library_shared {
                 "android.frameworks.sensorservice-V1-ndk",
                 "android.hardware.sensors-V3-ndk",
                 "libmiClstc",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libagmdevice",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libagmdevice.so",
+            ],
+            shared_libs: [
+                "libagmmixer",
+                "libtinyalsa",
+                "liblog",
+                "libmisight",
+                "libcutils",
+                "libpalclient",
                 "libc++",
                 "libc",
                 "libm",
@@ -21805,17 +21893,6 @@ android_app_import {
 }
 
 android_app_import {
-    name: "QtiTelephonyService",
-    owner: "xiaomi",
-    apk: "proprietary/system_ext/app/QtiTelephonyService/QtiTelephonyService.apk",
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-    system_ext_specific: true,
-}
-
-android_app_import {
     name: "QtiTelephony",
     owner: "xiaomi",
     apk: "proprietary/system_ext/priv-app/QtiTelephony/QtiTelephony.apk",
@@ -22041,15 +22118,6 @@ prebuilt_etc_xml {
     name: "ImsRtpService-aidl.xml",
     owner: "xiaomi",
     src: "proprietary/vendor/etc/vintf/manifest/ImsRtpService-aidl.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "android.hardware.drm-service.xml",
-    owner: "xiaomi",
-    src: "proprietary/vendor/etc/vintf/manifest/android.hardware.drm-service.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -22311,15 +22379,6 @@ prebuilt_etc_xml {
     name: "qcrilhook-saidl.xml",
     owner: "xiaomi",
     src: "proprietary/vendor/etc/vintf/manifest/qcrilhook-saidl.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "qesdk-manager.xml",
-    owner: "xiaomi",
-    src: "proprietary/vendor/etc/vintf/manifest/qesdk-manager.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
@@ -22629,15 +22688,6 @@ prebuilt_etc_xml {
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "AHBF-V3-service.xml",
-    owner: "xiaomi",
-    src: "proprietary/odm/etc/vintf/manifest/AHBF-V3-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    device_specific: true,
 }
 
 prebuilt_etc_xml {
@@ -24565,36 +24615,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "qesdk-manager",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/qesdk-manager",
-            ],
-            shared_libs: [
-                "libqesdk_manager",
-                "vendor.qti.qesdhal-impl",
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libavservices_minijail",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "qmipriod",
     owner: "xiaomi",
     target: {
@@ -25612,26 +25632,46 @@ cc_prebuilt_binary {
     device_specific: true,
 }
 
-// mfp-daemon disabled - using android.hardware.biometrics.fingerprint-service.xiaomi instead
-// cc_prebuilt_binary {
-//     name: "mfp-daemon",
-//     owner: "xiaomi",
-//     target: {
-//         android_arm64: {
-//             srcs: [
-//                 "proprietary/odm/bin/hw/mfp-daemon",
-//             ],
-//         },
-//     },
-//     compile_multilib: "64",
-//     check_elf_files: false,
-//     strip: {
-//         none: true,
-//     },
-//     prefer: true,
-//     relative_install_path: "hw",
-//     device_specific: true,
-// }
+cc_prebuilt_binary {
+    name: "vendor.xiaomi.hardware.vibratorfeature.service",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "libbase",
+                "libsoc_helper",
+                "liblog",
+                "libbinder_ndk",
+                "libtinyalsa",
+                "libhardware",
+                "libhidlbase",
+                "android.hardware.vibrator-V1-ndk_platform",
+                "vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform",
+                "libmisight",
+                "android.frameworks.sensorservice@1.0",
+                "android.hardware.sensors@2.0",
+                "libpalclient",
+                "libxml2",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    device_specific: true,
+}
 
 cc_prebuilt_binary {
     name: "vendor.xiaomi.hw.touchfeature-service",
@@ -25653,6 +25693,7 @@ cc_prebuilt_binary {
                 "android.frameworks.sensorservice-V1-ndk",
                 "android.hardware.sensors-V3-ndk",
                 "libhidlbase",
+                "libstagefright_foundation",
                 "libc++",
                 "libc",
                 "libm",
@@ -25779,13 +25820,6 @@ cc_prebuilt_binary {
 }
 
 install_symlink {
-    name: "system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so",
-    system_ext_specific: true,
-    installed_location: "priv-app/ims/lib/arm64/libimscamera_jni.so",
-    symlink_target: "/system_ext/lib64/libimscamera_jni.so",
-}
-
-install_symlink {
     name: "system_ext_priv-app_ims_lib_arm64_libimsmedia_jni_so",
     system_ext_specific: true,
     installed_location: "priv-app/ims/lib/arm64/libimsmedia_jni.so",
@@ -25811,205 +25845,4 @@ install_symlink {
     soc_specific: true,
     installed_location: "lib64/libq3dtools_adreno.so",
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
-}
-
-android_app_import {
-    name: "imssettings",
-    owner: "xiaomi",
-    apk: "proprietary/system_ext/app/imssettings/imssettings.apk",
-    system_ext_specific: true,
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-}
-
-android_app_import {
-    name: "ImsDataChannelService",
-    owner: "xiaomi",
-    apk: "proprietary/system_ext/app/ImsDataChannelService/ImsDataChannelService.apk",
-    system_ext_specific: true,
-    certificate: "platform",
-    dex_preopt: {
-        enabled: false,
-    },
-}
-
-// Fingerprint HAL prebuilt
-cc_prebuilt_binary {
-    name: "android.hardware.biometrics.fingerprint-service.xiaomi_prebuilt",
-    stem: "android.hardware.biometrics.fingerprint-service.xiaomi",
-    owner: "xiaomi",
-    init_rc: ["proprietary/vendor/etc/init/android.hardware.biometrics.fingerprint-service.xiaomi.rc"],
-    vintf_fragments: ["proprietary/vendor/etc/vintf/manifest/android.hardware.biometrics.fingerprint-service.xiaomi.xml"],
-    srcs: ["proprietary/vendor/bin/hw/android.hardware.biometrics.fingerprint-service.xiaomi"],
-    relative_install_path: "hw",
-    compile_multilib: "64",
-    check_elf_files: false,
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    vendor: true,
-}
-
-// UdfpsHandler prebuilt
-cc_prebuilt_library_shared {
-    name: "libudfpshandler_prebuilt",
-    stem: "libudfpshandler",
-    owner: "xiaomi",
-    srcs: ["proprietary/vendor/lib64/libudfpshandler.so"],
-    compile_multilib: "64",
-    check_elf_files: false,
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    vendor: true,
-}
-
-// Vibrator - Xiaomi HAL
-cc_prebuilt_binary {
-    name: "vendor.xiaomi.hardware.vibratorfeature.service",
-    owner: "xiaomi",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "libbase",
-                "libsoc_helper",
-                "liblog",
-                "libbinder_ndk",
-                "libtinyalsa",
-                "libhardware",
-                "libhidlbase",
-                "android.hardware.vibrator-V1-ndk_platform",
-                "vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform",
-                "libmisight",
-                "android.frameworks.sensorservice@1.0",
-                "android.hardware.sensors@2.0",
-                "libpalclient",
-                "libxml2",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "android.hardware.vibrator-V1-ndk_platform",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/android.hardware.vibrator-V1-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libdl",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    vendor: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libdl",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    vendor: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vibrator.default",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/vibrator.default.so",
-            ],
-            shared_libs: [
-                "libc++",
-                "libc",
-                "libdl",
-                "liblog",
-                "libm",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    relative_install_path: "hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "vendor.xiaomi.hardware.vibratorfeature.service.rc",
-    owner: "xiaomi",
-    src: "proprietary/odm/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc",
-    filename_from_src: true,
-    sub_dir: "init",
-    device_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vendor.hardware.vibratorfeature-permission.xml",
-    owner: "xiaomi",
-    src: "proprietary/odm/etc/permissions/vendor.hardware.vibratorfeature-permission.xml",
-    filename_from_src: true,
-    sub_dir: "permissions",
-    device_specific: true,
-}
-
-
-prebuilt_etc_xml {
-    name: "vendor.xiaomi.hardware.vibratorfeature.service.xml",
-    owner: "xiaomi",
-    src: "proprietary/odm/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    device_specific: true,
 }
