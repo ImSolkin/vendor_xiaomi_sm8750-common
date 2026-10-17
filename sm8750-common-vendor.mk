@@ -773,7 +773,7 @@ PRODUCT_PACKAGES += \
     libaudiocorehal.qti \
     libaudioeffecthal.qti \
     libqtigatekeeper \
-    libsoundtriggerhal.qti \
+    # libsoundtriggerhal.qti \
     mbedtls_qti \
     sensors.dynamic_sensor_hal \
     vendor.qti.hardware.alarm-impl \
@@ -1537,7 +1537,6 @@ PRODUCT_PACKAGES += \
     deviceinfo-saidl.xml \
     dpm-saidl.xml \
     imsdcservice-saidl.xml \
-    manifest_audiocorehal_default.xml \
     manifest_btaudiocoreservices_qti.xml \
     mwqem-saidl.xml \
     qasr_vintf.xml \

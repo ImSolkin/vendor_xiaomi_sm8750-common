@@ -959,25 +959,7 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-cc_prebuilt_library_shared {
-    name: "libsoundtriggerhal.qti",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/hw/libsoundtriggerhal.qti.so",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    check_elf_files: false,
-    relative_install_path: "hw",
-    prefer: true,
-    soc_specific: true,
-}
+// libsoundtriggerhal.qti removed (built from source)
 
 cc_prebuilt_library_shared {
     name: "mbedtls_qti",
@@ -19951,7 +19933,6 @@ cc_prebuilt_library_shared {
                 "libhistprocess",
                 "libdisplaylog",
                 "libadaptivehdr",
-                "libdynamicelvss",
                 "android.frameworks.sensorservice-V1-ndk",
                 "android.hardware.sensors-V3-ndk",
                 "vendor.xiaomi.hardware.framecapturemanager-V1-ndk",
@@ -22334,15 +22315,6 @@ prebuilt_etc_xml {
     name: "imsdcservice-saidl.xml",
     owner: "xiaomi",
     src: "proprietary/vendor/etc/vintf/manifest/imsdcservice-saidl.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    soc_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "manifest_audiocorehal_default.xml",
-    owner: "xiaomi",
-    src: "proprietary/vendor/etc/vintf/manifest/manifest_audiocorehal_default.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     soc_specific: true,
